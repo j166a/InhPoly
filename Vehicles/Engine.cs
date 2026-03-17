@@ -15,9 +15,9 @@ namespace Enginespace
     }
     public abstract class Engine
     {
-        bool Running { get; set; }
-        int Horsepower { get; set; }
-        FuelTypeEnum FuelType { get; set; }
+        public bool Running { get; set; }
+        public int Horsepower { get; set; }
+        public FuelTypeEnum FuelType { get; set; }
 
         public Engine(int horsepower, FuelTypeEnum fuelType)
         {
@@ -31,34 +31,22 @@ namespace Enginespace
         {
             Running = true;
         }
-
-        
-
-
     }
 
     public class CarEngine : Engine
     {
         public CarEngine()
-            : base(600, FuelTypeEnum.Unleaded)
-        {
-
-        }
+            : base(60, FuelTypeEnum.Unleaded)
+        {}
     }
 
     public class MotorcycleEngine : Engine
     {
         public MotorcycleEngine()
-            : base(1000, FuelTypeEnum.Leaded)
+            : base(10, FuelTypeEnum.Leaded)
         {
 
         }
     }
-
-    
-
-
-
-
 
 }
