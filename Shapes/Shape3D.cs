@@ -21,9 +21,8 @@ namespace Shapes
     public class Cylinder : Shape3D 
     {
         public double Height { get; set; }
-
-        public Cylinder(Circle baseShape, double height)
-            : base(baseShape)
+        public Cylinder(Circle shape, double height)
+            : base(shape)
         {
             Height = height;
         }
@@ -51,19 +50,15 @@ namespace Shapes
 
     public class Sphere : Shape3D
     {
-        public Sphere(Circle baseShape)
-            : base(baseShape)
+        public Sphere(Circle shape)
+            : base(shape)
         {
         }
         public override double CalculateVolume()
         {
             Circle circle = (Circle)BaseShape;
             double radius = circle.Radius;
-
-            Console.WriteLine(radius);
-            Console.WriteLine(Math.Pow(5, 3) * Math.PI * (4 / 3));
-
-            return (Math.Pow(radius, 3) * Math.PI * (4 / 3));
+            return (4.0 / 3.0) * Math.PI * Math.Pow(radius, 3);
         }
     }
 
